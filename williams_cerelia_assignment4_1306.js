@@ -23,18 +23,18 @@ var myLibrary = function() {
 	if (checkAt != -1 && checkDot != -1) {
 		if (checkAt < checkDot) {
 			if (checkDot - checkAt != 1) {
-				return (email + " is a valid email");
+				return true;
 			}
 			else {
-				return (email + " is not a valid email");
+				return false;
 			}
 		}
 		else {
-			return (email + " is not a valid email");
+			return false;
 		}
 	}
 	else {
-		return (email + " is not a valid email");
+		return false;
 	}	
 }
 	// end email function
@@ -53,13 +53,13 @@ var myLibrary = function() {
 	check = url.substring(0, end + 1);
 
 	if (check === checkArray[0]) {
-		return (url + " is a valid URL");
+		return true;
 	}
 	else if (check === checkArray[1]) {
-		return (url + " is a valid URL");
+		return true;
 	}
 	else {
-		return (url + " is not a valid URL");
+		return false;
 	}
 }
 	// end url function
@@ -139,9 +139,9 @@ var myLibrary = function() {
 // LIBRARY
 var newLib = new myLibrary();
 
-console.log("Yes, " + newLib.emailCheck("cdw8138@fullsail.edu") +  ".");
-console.log("Yes, " + newLib.urlCheck("http://www.fullsail.edu") + ". ");
-console.log("Also, " + newLib.urlCheck("https://www.fullsail.edu") + ". ");
+console.log(newLib.emailCheck("cdw8138@fullsail.edu") +  ".");
+console.log(newLib.urlCheck("http://www.fullsail.edu") + ". ");
+console.log(newLib.urlCheck("https://www.fullsail.edu") + ". ");
 console.log("Pi rounded to two decimal places is " + newLib.checkDec(3.14159, 2));
 console.log("I want to change my separator from a,b,c to " + newLib.sepString("a,b,c", ",", "/"));
 console.log(newLib.titleCase("have a nice day") + "!");
