@@ -90,6 +90,18 @@ var myLibrary = function() {
 	//end separator function
 	
 	
+	// TITLE CASE FUNCTION
+	var titleCase = function(arg) {
+      var string, word, words, _i, _len;
+      string = "";
+      words = arg.split(" ");
+      for (_i = 0, _len = words.length; _i < _len; _i++) {
+        word = words[_i];
+        string += ' ' + word.substr(0, 1).toUpperCase() + word.substr(1, word.length);
+      }
+      return string;
+    }
+    // end title case function
 	
 
 	// OBJECTS
