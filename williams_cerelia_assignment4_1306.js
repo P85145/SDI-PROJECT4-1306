@@ -39,7 +39,31 @@ var myLibrary = function() {
 }
 	// end email function
 
+	
+	// URL FUNCTION
+	var urlCheck = function (string) {
+	var url = string,
+		check = "",
+		checkArray = [],
+		end = url.indexOf(":");
 
+	checkArray[0] = "http:";
+	checkArray[1] = "https:";
+
+	check = url.substring(0, end + 1);
+
+	if (check === checkArray[0]) {
+		return (url + " is a valid URL");
+	}
+	else if (check === checkArray[1]) {
+		return (url + " is a valid URL");
+	}
+	else {
+		return (url + " is not a valid URL");
+	}
+}
+	// end url function
+	
 
 
 
