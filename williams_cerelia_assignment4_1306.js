@@ -77,6 +77,18 @@ var myLibrary = function() {
 	//end decimal check function
 	
 	
+	// SEPARATOR FUNCTION
+	var sepString = function(arg) {
+      var newString;
+      newString = arg.replace(/[,]/g, '/');
+      if (newString.indexOf("," !== -1)) {
+        return newString;
+      } else {
+        return "error";
+      }
+    }
+	//end separator function
+	
 	
 	
 
