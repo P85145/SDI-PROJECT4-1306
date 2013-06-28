@@ -8,65 +8,62 @@
 
 
 var myLibrary = function() {
+	
+	
+	
+	// EMAIL FUNCTION
+	var emailCheck = function (localEmail) {
+	var email = localEmail,
+		checkAt = 0,
+		checkDot = 0;
 
-	// FUNCTION
-	var checkPhone = function(val) {
-		
-		var strLen = val.length;				
-		for (var i=0; i <=strLen; i++){      
-		
-			if (val.substring(1, i+1) === "-") 
-			   (val.substring(1, i+4) === "-")
-			   (val.substring(1, i+8) === "-") 
-			
-				return true;
-				
-			} else {
-				return false;
+	checkAt = email.indexOf("@");
+	checkDot = email.indexOf(".");
+
+	if (checkAt != -1 && checkDot != -1) {
+		if (checkAt < checkDot) {
+			if (checkDot - checkAt != 1) {
+				return (email + " is a valid email");
 			}
-		
+			else {
+				return (email + " is not a valid email");
+			}
 		}
-		
-	} // end check string
-// change i=? in the function to start at a new position ex) looking for 2nd dash
-	
-	
-	
-	
-	// FUNCTION
-	
-	
-	
-	// FUNCTION
-	
-	
-	
-	// FUNCTION
-	
-	
-	
-	// FUNCTION
-	
-	
-	
-	// FUNCTION
+		else {
+			return (email + " is not a valid email");
+		}
+	}
+	else {
+		return (email + " is not a valid email");
+	}	
+}
+	// end email function
 
 
 
 
 
 
-
-	// Objects
+	// OBJECTS
 	return {
-		"checkPhone": checkPhone,
+		"emailCheck": emailCheck,
+		"urlCheck": urlCheck,
+		"checkDec": checkDec,
+		"sepString": sepString,
+		"titleCase": titleCase,
+		"makeNum": makeNum,
 		
 	}
 	
 }
 
+// LIBRARY
 var newLib = new myLibrary();
 
-console.log("Is the dash in the correct position? " + newLib.checkPhone("123-456-7890"));
-
-
+console.log("Yes, " + newLib.emailCheck("cdw8138@fullsail.edu") +  ".");
+console.log("Yes, " + newLib.urlCheck("http://www.fullsail.edu") + ". ");
+console.log("Also, " + newLib.urlCheck("https://www.fullsail.edu") + ". ");
+console.log("Pi rounded to two decimal places is " + newLib.checkDec(3.14159, 2));
+console.log("I want to change my separator from a,b,c to " + newLib.sepString("a,b,c", ",", "/"));
+console.log(newLib.titleCase("have a nice day") + "!");
+console.log("Two plus three is equal to " + newLib.makeNum("5"));
