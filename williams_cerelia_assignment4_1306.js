@@ -66,7 +66,19 @@ var myLibrary = function() {
 	
 
 
+	// DECIMAL CHECK FUNCTION
+	var checkDec = function (num, dec) {
+	var newNumber;
 
+	newNumber = num.toFixed(dec);
+
+	return newNumber;	
+}
+	//end decimal check function
+	
+	
+	
+	
 
 	// OBJECTS
 	return {
