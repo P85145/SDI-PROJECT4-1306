@@ -102,6 +102,25 @@ var myLibrary = function() {
       return string;
     }
     // end title case function
+    
+    
+    
+    // STRING TO NUMBER FUNCTION
+	var makeNum = function(arg) {
+      var int;
+      if (typeof arg === "string") {
+        int = parseInt(arg);
+        if (typeof int === "number") {
+          return int;
+        } else {
+          return "Not a number";
+        }
+      } else {
+        return "wrong info";
+      }
+    };
+
+	// end string to number function
 	
 
 	// OBJECTS
